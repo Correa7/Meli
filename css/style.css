@@ -230,6 +230,8 @@
   /*# sourceMappingURL=style.css.map */
 
   
+  /* Estos son estilos que les puse al contenedor y las tarjetas */
+
   .container{
 	padding: 20px;
 	margin-top: 30px;
@@ -252,6 +254,10 @@
     width: 250px;
     height: 300px;
 }
+
+/* Esto es parte del grid de bootstrap */
+
+
 .col-lg-4,
 .col-lg-6,
 .col-lg-8,

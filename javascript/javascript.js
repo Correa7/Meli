@@ -11,24 +11,28 @@ let cuadros = [
     {id: 9, nombre: "J", categoria:"cc", precio:10, img:"./imagenes/mg-min.png"}
 ]
 
+// Con esto capturo el div del html donde se van a renderizar las tarjetas
+// fijate que lo capturo por el id, se puede capturar tambien por class o el nombre de la etiqueta
 let contenedor = document.getElementById("contenedor")
 
 
 
 
-
+// Acá llamo a la función que esta mas abajo
 renderizar(cuadros)
 // functions
 
 
-
-// Renderizar
-
 function renderizar(array) {
+    // primero se pone el nombre con que capturaste el div con .innerHTML y vac{io para que arranque vacío
     contenedor.innerHTML = ""
     for (const cuadro of array) {
+        // Dentro del contenedor puedo crear o no elementos
+        // En este caso cree otro div que va a contener a las tarjetas lo llame tarjetabody
         let tarjetaBody = document.createElement("div")
+        // aca le cree una clase, puede ser una de bootstrap como le puse o alguna que quieras darle para modificarla en css
         tarjetaBody.className = "col-lg-4"
+        // aca se utiliza el templatestring para que en cada vuelta de bucle renderice esta tarjeta de bootstrap
         tarjetaBody.innerHTML = `
             <div class="card">
                 <div class="card-img">
@@ -42,6 +46,7 @@ function renderizar(array) {
                 </div>
             </div>
             `
+            // por ultimo el div creado (tarjetabody) se apendea a el contenedor capturado en el html
         contenedor.append(tarjetaBody)
     }
 }
